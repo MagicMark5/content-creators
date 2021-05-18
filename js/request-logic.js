@@ -1,11 +1,9 @@
-// We at Content Creators know this code is useful for getting the
-// extension off of the supplied filename, but we can't figure out the rest of
-// the function to use it! We hope this is useful to you!
-
 
 function getContentType(filename) {
+  // Returns the correct content-type string for the given filename string, e.g. "index.html"
   const extension = filename.match(/.*\.([^\.]*)$/)[1];
-
+  // extension variable will contain the file type extension 
+  // e.g. html, css, jpeg, jpg, or unknown/otherwise
   switch (extension) {
     case 'html':
       return 'text/html';
