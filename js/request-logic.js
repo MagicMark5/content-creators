@@ -1,20 +1,19 @@
 
 function getContentType(filename) {
-  // Returns the correct content-type string for the given filename string, e.g. "index.html"
+  // Returns the correct content-type string e.g. 'text/html'
+  // for the given filename string, e.g. 'index.html'
   const extension = filename.match(/.*\.([^\.]*)$/)[1];
+  
   // extension variable will contain the file type extension 
   // e.g. html, css, jpeg, jpg, or unknown/otherwise
-  switch (extension) {
-    case 'html':
-      return 'text/html';
-    case 'css':
-      return 'text/css';
-    case 'jpeg':
-      return 'image/jpeg';
-    case 'jpg':
-      return 'image/jpeg';
-    default: 
-      return 'text/plain';
+  if (extension === 'html') {
+    return 'text/html';
+  } else if (extension === 'css') {
+    return 'text/css';
+  } else if (extension === 'jpg' || extension === 'jpeg') {
+    return 'image/jpeg';
   }
+
+  return 'text/plain';
 
 }
